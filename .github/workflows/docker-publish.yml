@@ -1,0 +1,68 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches: [ "main" ]
+    # اضافه کردن این بخش جادویی:
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+      - '.gitignore'
+      - 'docs/**' # اگر پوشه داکیومنت دارید
+    # هر وقت روی شاخه main (یا master) پوش شد، اجرا می‌شود
+    tags: [ 'v*.*.*' ]
+    # موقع ساخت تگ هم اکشن اجرا شود
+  workflow_dispatch: 
+    # این خط اجازه می‌دهد دکمه دستی Run Workflow هم داشته باشی
+
+env:
+  REGISTRY: ghcr.io
+  # نام ایمیج پیش‌فرض (هنوز کوچک نشده)
+  IMAGE_NAME: ${{ github.repository }}-v2
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 1. اول حروف بزرگ را به کوچک تبدیل می‌کنیم (مهم)
+      - name: Lowercase Image Name
+        run: |
+          echo "IMAGE_NAME=${IMAGE_NAME,,}" >>${GITHUB_ENV}
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # 2. حالا متادیتا را می‌سازیم
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            # تگ latest همیشه برای آخرین بیلد ساخته می‌شود
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
+            # تگ بر اساس نام شاخه (مثلاً main)
+            type=ref,event=branch
+            # تگ بر اساس شماره ورژن (اگر در گیت‌هاب Tag بزنید، مثلا v1.0.0)
+            type=semver,pattern={{version}}
+            # تگ کوتاه شده SHA (همین که الان دارید)
+            type=sha
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
