@@ -21,7 +21,9 @@
 
 
 
-## یک نسخه بهینه شده از پنل **3x-ui** برای اجرا روی پلتفرم‌های ابری با حافظه دائمی
+<p align="center" style="color: #ef4444; font-family: 'Vazirmatn', 'Vazir', 'Tahoma', sans-serif; font-weight: bold; font-size: 16px;">
+  یک نسخه بهینه شده از پنل 3x-ui برای اجرا روی پلتفرم‌های ابری با حافظه دائمی
+</p>
 
 ---
 
