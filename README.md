@@ -21,8 +21,8 @@
 
 
 
-<p align="center" style="color: #ef4444; font-family: 'Vazirmatn', 'Vazir', 'Tahoma', sans-serif; font-weight: bold; font-size: 16px;">
-  یک نسخه بهینه شده از پنل 3x-ui برای اجرا روی پلتفرم‌های ابری با حافظه دائمی
+<p align="center">
+  <img src="https://img.shields.io/badge/%DB%8C%DA%A9%20%D9%86%D8%B3%D8%AE%D9%87%20%D8%A8%D9%87%DB%8C%D9%86%D9%87%20%D8%B4%D8%AF%D9%87%20%D8%A7%D8%B2%20%D9%BE%D9%86%D9%84%203x--ui%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D8%AC%D8%B1%D8%A7%20%D8%B1%D9%88%DB%8C%20%D9%BE%D9%84%D8%AA%D9%81%D8%B1%D9%85%E2%80%8C%D9%87%D8%A7%DB%8C%20%D8%A7%D8%A8%D8%B1%DB%8C%20%D8%A8%D8%A7%20%D8%AD%D8%A7%D9%81%D8%B8%D9%87%20%D8%AF%D8%A2%D8%A6%D9%85%DB%8C-red?style=for-the-badge" alt="توضیحات">
 </p>
 
 ---
