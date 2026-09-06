@@ -8,8 +8,10 @@
 
 
 <div dir="rtl">
-<p style="text-align: center;">
-# 🚀 سیستم هوشمند مدیریت پنل 3x-ui
+  
+<p align="center">
+# 🚀 سیستم هوشمند مدیریت پنل 3x-ui 🚀 
+
 (نسخه بهینه‌شده برای کانتینرهای بدون VOLUME)
 </p>
 
