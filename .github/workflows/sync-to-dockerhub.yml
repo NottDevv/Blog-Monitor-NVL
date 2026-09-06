@@ -23,10 +23,10 @@ jobs:
       - name: Pull from GHCR, Tag, and Push to Docker Hub
         run: |
           # ۱. دریافت آخرین نسخه از گیتهاب
-          docker pull ghcr.io/nottdevv/blog-monitor-nvl-v2:latest
+          docker pull ghcr.io/nottdevv/blog-monitor-nvl:latest
           
           # ۲. تغییر تگ به ساختار داکرهاب
-          docker tag ghcr.io/nottdevv/blog-monitor-nvl-v2:latest ${{ secrets.DOCKERHUB_USERNAME }}/blog-monitor-nvl-v2:latest
+          docker tag ghcr.io/nottdevv/blog-monitor-nvl:latest ${{ secrets.DOCKERHUB_USERNAME }}/blog-monitor-nvl:latest
           
           # ۳. آپلود روی داکرهاب
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/blog-monitor-nvl-v2:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/blog-monitor-nvl:latest
