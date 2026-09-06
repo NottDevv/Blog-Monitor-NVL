@@ -18,7 +18,7 @@ on:
 env:
   REGISTRY: ghcr.io
   # نام ایمیج پیش‌فرض (هنوز کوچک نشده)
-  IMAGE_NAME: ${{ github.repository }}-v2
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   build-and-push:
