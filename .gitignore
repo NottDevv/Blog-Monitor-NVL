@@ -1,0 +1,19 @@
+# Git & GitHub
+.git
+.github/
+
+# Documentation & Notes
+README.md
+*.txt
+*.md
+
+# Logs & Database
+*.log
+*.db
+*.sqlite
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
