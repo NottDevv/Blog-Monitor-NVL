@@ -26,7 +26,7 @@ RUN rm -rf /usr/share/nginx/html/* \
 
 # ۲. نصب پنل 3x-ui (نسخه MHSanaei)
 WORKDIR /usr/local/x-ui
-RUN wget https://github.com/mhsanaei/3x-ui/releases/latest/download/x-ui-linux-amd64.tar.gz \
+RUN wget https://github.com/MHSanaei/3x-ui/releases/download/v3.10.2/x-ui-linux-amd64.tar.gz \
     && tar -zxvf x-ui-linux-amd64.tar.gz -C /tmp/ \
     && mv /tmp/x-ui/x-ui . \
     && mv /tmp/x-ui/bin . \
